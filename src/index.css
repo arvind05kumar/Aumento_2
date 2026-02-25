@@ -1,0 +1,75 @@
+:root {
+  --primary: #0ff;
+  /* Cyan */
+  --bg-color: #00020a;
+  /* Deep space blue/black */
+  --text-primary: #fff;
+  --text-secondary: #a0a0a0;
+  --accent: #ff9800;
+  --font-main: 'Manrope', sans-serif;
+  --font-display: 'Orbitron', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Glassmorphism helpers */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.heading-font {
+  font-family: var(--font-display);
+  letter-spacing: 2px;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #ffffff, #00ffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Dotted Navigation Path */
+.nav-path {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background-image: linear-gradient(to bottom, transparent 50%, rgba(0, 255, 255, 0.2) 50%);
+  background-size: 1px 20px;
+  z-index: 1;
+  pointer-events: none;
+}
