@@ -20,67 +20,24 @@ const ParticleSystem = ({ progressRef }) => {
         const colorCyan = new THREE.Color('#00ffff'); // Cyan
 
         for (let i = 0; i < PARTICLE_COUNT; i++) {
-            // --- INITIAL SHAPE (Trophy/Rocket on Right) ---
-            if (i < 3500) {
-                // Outer shell: Hollow elongated capsule/cylinder focus
-                const h = (Math.random() - 0.5) * 14;
-                let currentR = 3.5;
+            // Ambient scattered dust uniformly everywhere, super wide
+            pos[i * 3 + 0] = (Math.random() - 0.5) * 120; // Spread horizontally
+            pos[i * 3 + 1] = (Math.random() - 0.5) * 120; // Spread vertically
+            pos[i * 3 + 2] = (Math.random() - 0.5) * 120; // Spread depth
 
-                // Taper the top and bottom to make a bullet/capsule shape
-                if (h > 4) currentR = 3.5 * (7 - h) / 3;
-                if (h < -4) currentR = 3.5 * (h + 7) / 3;
+            // Target positions also scattered for a gentle morphing effect across the screen
+            target[i * 3 + 0] = (Math.random() - 0.5) * 120;
+            target[i * 3 + 1] = (Math.random() - 0.5) * 120;
+            target[i * 3 + 2] = (Math.random() - 0.5) * 120;
 
-                // Make mostly hollow, with some internal volume
-                if (Math.random() > 0.3) {
-                    currentR = currentR * (0.9 + Math.random() * 0.1);
-                } else {
-                    currentR = currentR * Math.random();
-                }
+            // Mix Cyan and Gold colors
+            const c = Math.random() > 0.5 ? colorGold : colorCyan;
+            col[i * 3 + 0] = c.r;
+            col[i * 3 + 1] = c.g;
+            col[i * 3 + 2] = c.b;
 
-                const theta = 2 * Math.PI * Math.random();
-                pos[i * 3 + 0] = currentR * Math.cos(theta);
-                pos[i * 3 + 1] = h;
-                pos[i * 3 + 2] = currentR * Math.sin(theta);
-
-                col[i * 3 + 0] = colorGold.r;
-                col[i * 3 + 1] = colorGold.g;
-                col[i * 3 + 2] = colorGold.b;
-            } else if (i < 5000) {
-                // Inner core sphere (Cyan) located towards the bottom/middle
-                const r = 2.5 * Math.cbrt(Math.random());
-                const theta = 2 * Math.PI * Math.random();
-                const phi = Math.acos(2 * Math.random() - 1);
-
-                pos[i * 3 + 0] = r * Math.sin(phi) * Math.cos(theta);
-                pos[i * 3 + 1] = (r * Math.cos(phi)) - 1.5; // Offset core downwards
-                pos[i * 3 + 2] = r * Math.sin(phi) * Math.sin(theta);
-
-                col[i * 3 + 0] = colorCyan.r;
-                col[i * 3 + 1] = colorCyan.g;
-                col[i * 3 + 2] = colorCyan.b;
-            } else {
-                // Ambient scattered dust
-                pos[i * 3 + 0] = (Math.random() - 0.5) * 20;
-                pos[i * 3 + 1] = (Math.random() - 0.5) * 20;
-                pos[i * 3 + 2] = (Math.random() - 0.5) * 10;
-
-                // Mostly Cyan dust, some Gold
-                const c = Math.random() > 0.8 ? colorGold : colorCyan;
-                col[i * 3 + 0] = c.r;
-                col[i * 3 + 1] = c.g;
-                col[i * 3 + 2] = c.b;
-            }
-
-            // --- TARGET SHAPE (Globe) ---
-            const radius = 6;
-            const theta2 = 2 * Math.PI * Math.random();
-            const phi2 = Math.acos(2 * Math.random() - 1);
-            target[i * 3 + 0] = radius * Math.sin(phi2) * Math.cos(theta2);
-            target[i * 3 + 1] = radius * Math.sin(phi2) * Math.sin(theta2);
-            target[i * 3 + 2] = radius * Math.cos(phi2);
-
-            // Random sizes for depth effect
-            sz[i] = Math.random() * 2 + 0.5;
+            // Bolder, larger sizes
+            sz[i] = Math.random() * 4.0 + 2.0;
         }
         return [pos, target, sz, col];
     }, []);
@@ -126,25 +83,22 @@ const ParticleSystem = ({ progressRef }) => {
       float ll = length(xy);
       if(ll > 0.5) discard;
       
-      // Color: Cyan to Light Cyan with soft glow
-      vec3 coreColor = vec3(0.0, 1.0, 1.0); // #00FFFF Cyan
-      vec3 outerColor = vec3(0.0, 0.5, 0.8);
+      // Softer, bolder glow using vColor from attributes
+      float intensity = pow(1.0 - (ll * 2.0), 1.2);
       
-      float intensity = 1.0 - (ll * 2.0);
-      gl_FragColor = vec4(mix(outerColor, coreColor, intensity), intensity);
+      // Make the center of the particle slightly brighter/whiter
+      vec3 core = mix(vColor, vec3(1.0), 0.5);
+      vec3 finalColor = mix(vColor, core, intensity);
+      
+      gl_FragColor = vec4(finalColor, min(intensity * 1.5, 1.0));
     }
   `;
 
     useFrame((state) => {
         // Rotation of entire system
         if (pointsRef.current) {
-            pointsRef.current.rotation.y += 0.002;
-            // Add a slight tilt on z axis to match the image, un-tilt as scroll progresses
-            const targetProgress = progressRef.current?.value || 0;
-            pointsRef.current.rotation.z = THREE.MathUtils.lerp(-0.5, 0, targetProgress);
-            // Re-center if scrolled down
-            pointsRef.current.position.x = THREE.MathUtils.lerp(5.5, 0, targetProgress);
-            pointsRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.1) * 0.2;
+            pointsRef.current.rotation.y += 0.001;
+            pointsRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.05) * 0.1;
         }
 
         if (materialRef.current) {
@@ -157,7 +111,7 @@ const ParticleSystem = ({ progressRef }) => {
     });
 
     return (
-        <points ref={pointsRef} position={[5.5, 0, 0]} rotation={[0, 0, -0.5]}>
+        <points ref={pointsRef} position={[0, 0, 0]}>
             <bufferGeometry>
                 <bufferAttribute
                     attach="attributes-position"

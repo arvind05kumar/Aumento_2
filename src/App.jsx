@@ -6,7 +6,8 @@ import RegistrationPage from './pages/RegistrationPage';
 import VibeCodingRegistration from './pages/VibeCodingRegistration';
 import FreeFireRegistration from './pages/FreeFireRegistration';
 import { Routes, Route, useLocation } from 'react-router-dom';
-import ParticleBackground from './components/ParticleBackground';
+import bgVideo from './assets/bg_video.mp4';
+import Footer from './components/Footer';
 
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -43,14 +44,29 @@ function App() {
 
   return (
     <div id="root-container" style={{ position: 'relative', width: '100vw', overflowX: 'hidden' }}>
-      {/* 3D Background */}
-      <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100vh', zIndex: 0, pointerEvents: 'none' }}>
-        <ParticleBackground progressRef={progressRef} />
+      {/* Video Background */}
+      <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100vh', zIndex: 0, pointerEvents: 'none', backgroundColor: '#000' }}>
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            opacity: 0.35, // Significantly lowered to make text visible and readable
+            transform: 'translateZ(0)', // Force hardware acceleration to fix stutter/lag
+            willChange: 'transform' // Hint to browser for smoother video playback
+          }}
+        >
+          <source src={bgVideo} type="video/mp4" />
+        </video>
       </div>
 
 
       {/* Content overlays */}
-      <div style={{ position: 'relative', zIndex: 10 }}>
+      <div style={{ position: 'relative', zIndex: 10, display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
         <Navbar />
         <main>
           <Routes>
@@ -61,6 +77,7 @@ function App() {
             <Route path="/register/freefire" element={<FreeFireRegistration />} />
           </Routes>
         </main>
+        <Footer />
       </div>
     </div>
   )

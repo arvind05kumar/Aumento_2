@@ -10,12 +10,10 @@ export default function Workshops() {
 
     return (
         <section style={{
-            minHeight: '100vh',
-            padding: '8rem 4rem',
-            position: 'relative'
+            padding: '5rem 4rem 6rem',
         }}>
             <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-                <h2 className="heading-font text-gradient" style={{ fontSize: '3rem', marginBottom: '4rem' }}>FEATURED EVENTS</h2>
+                <h2 className="heading-font text-gradient" style={{ fontSize: '3rem', marginBottom: '2rem' }}>FEATURED EVENTS</h2>
 
                 <div style={{
                     display: 'grid',

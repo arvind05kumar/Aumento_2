@@ -14,8 +14,8 @@ export default function EventsPage() {
     const nonTechnicalEvents = [
         { name: "Reel making", img: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=800&auto=format&fit=crop", link: "/register" },
         { name: "Unfinished Canvas", img: "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?q=80&w=800&auto=format&fit=crop", link: "/register" },
-        { name: "Arm wrestling", img: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?q=80&w=800&auto=format&fit=crop", link: "/register" },
-        { name: "Gamming", img: "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800&auto=format&fit=crop", link: "/register/freefire" }
+        { name: "Arm wrestling", img: "https://www.freepik.com/free-photos-vectors/arm-wrestling", link: "/register" },
+        { name: "Gamming - FreeFire", img: "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800&auto=format&fit=crop", link: "/register/freefire" }
     ];
 
     const openEvents = [
@@ -105,7 +105,7 @@ export default function EventsPage() {
                                     e.target.parentElement.parentElement.style.filter = 'drop-shadow(0 5px 15px rgba(0,255,255,0.4))';
                                 }}
                             >
-                                REGISTER NOW
+                                RULE BOOK
                             </button>
                         </Link>
                     </div>

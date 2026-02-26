@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import aboutImage from '../assets/about-image.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -42,12 +41,10 @@ export default function About() {
 
     return (
         <section ref={sectionRef} style={{
-            minHeight: '80vh',
+
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'center',
-            padding: '4rem 10%',
-            position: 'relative',
+            padding: '5rem 10%',
             zIndex: 10,
             overflow: 'hidden'
         }}>
@@ -79,22 +76,15 @@ export default function About() {
                     }}>
                         Aumento 2.0 is the premier technology and innovation festival hosted by the Chandigarh College of Technology. It is designed to bridge the gap between imagination and reality, bringing together the sharpest minds from across the country.
                     </p>
-                    <p style={{
-                        fontSize: '1.2rem',
-                        color: '#ccc',
-                        lineHeight: '1.8',
-                        fontFamily: 'var(--font-main)'
-                    }}>
-                        Over two action-packed days, participants will dive into hands-on workshops, intense coding challenges, e-sports tournaments, and visionary talks. Whether you are a competitive programmer, an avid gamer, or simply a tech enthusiast, Aumento is your canvas to explore, collaborate, and push the boundaries of what's possible.
-                    </p>
                 </div>
 
                 {/* Right Image */}
                 <div ref={imageRef} style={{
-                    flex: '1 1 400px',
+                    flex: '0 1 300px', // Reduced basis to make it smaller
                     position: 'relative',
                     display: 'flex',
-                    justifyContent: 'center'
+                    justifyContent: 'center',
+                    margin: '0 auto'
                 }}>
                     <div style={{
                         position: 'absolute',
@@ -107,8 +97,8 @@ export default function About() {
                         borderRadius: '12px'
                     }}></div>
                     <img
-                        src={aboutImage}
-                        alt="Aumento Tech Event"
+                        src="/Aumento 1.jpeg"
+                        alt="Aumento 1.0 Memories"
                         style={{
                             width: '100%',
                             height: 'auto',

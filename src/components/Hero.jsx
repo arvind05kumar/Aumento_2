@@ -44,6 +44,16 @@ export default function Hero() {
                 <p style={{ fontSize: '1.2rem', color: '#ccc', maxWidth: '600px', margin: '0 auto 3rem', lineHeight: '1.5' }}>
                     A celebration of technology, innovation, and ideas brought together by curious minds. Join us as we explore, learn, and build the future.
                 </p>
+                <div style={{ marginBottom: '3rem' }}>
+                    <p style={{ fontSize: '1.2rem', color: '#ccc', margin: '0 auto 1rem', lineHeight: '1.5' }}>
+                        Powered by
+                    </p>
+                    <div style={{ display: 'flex', gap: '2rem', justifyContent: 'center', alignItems: 'center' }}>
+                        <img src="/acrobite.png" alt="Acrobite" style={{ height: '40px', width: 'auto', objectFit: 'contain' }} />
+                        <div style={{ width: '2px', height: '35px', background: 'rgba(255, 255, 255, 0.2)' }}></div>
+                        <img src="/Kollabworks.png" alt="Kollabworks" style={{ height: '45px', width: 'auto', objectFit: 'contain' }} />
+                    </div>
+                </div>
 
                 <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center', justifyContent: 'center' }}>
                     <Link to="/register" style={{ textDecoration: 'none' }}>

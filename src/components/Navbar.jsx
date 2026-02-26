@@ -27,6 +27,14 @@ export default function Navbar() {
                 <h1 className="heading-font" style={{ fontSize: '1.5rem', margin: 0 }}>
                     AUMENTO 2.0
                 </h1>
+
+                {/* Separator line */}
+                <div style={{ width: '1px', height: '35px', background: 'rgba(0, 255, 255, 0.3)', margin: '0 0.5rem' }}></div>
+
+                {/* CCT Logo */}
+                <div style={{ background: 'rgba(255, 255, 255, 0.9)', padding: '4px 10px', borderRadius: '8px', display: 'flex', alignItems: 'center', boxShadow: '0 0 10px rgba(0, 255, 255, 0.2)' }}>
+                    <img src="/cct-logo.jpg" alt="CCT Logo" style={{ height: '35px', width: 'auto', objectFit: 'contain' }} />
+                </div>
             </div>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '3rem' }}>

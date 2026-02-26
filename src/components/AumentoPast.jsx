@@ -13,11 +13,10 @@ export default function AumentoPast() {
 
     return (
         <section style={{
-            padding: '6rem 0',
-            position: 'relative',
+            padding: '4rem 0 2rem 0',
             overflow: 'hidden',
         }}>
-            <h2 className="heading-font text-gradient" style={{ fontSize: '3rem', marginBottom: '4rem', textAlign: 'center' }}>
+            <h2 className="heading-font text-gradient" style={{ fontSize: '3rem', marginBottom: '2rem', textAlign: 'center' }}>
                 AUMENTO 1.0 MEMORIES
             </h2>
 
