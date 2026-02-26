@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { Link } from 'react-router-dom';
 
 export default function Hero() {
     const titleRef = useRef(null);
@@ -30,15 +31,15 @@ export default function Hero() {
                 }}
             >
                 <div style={{ color: '#aaa', fontSize: '1rem', marginBottom: '0.5rem', fontFamily: 'var(--font-main)' }}>
-                    Aumento presents...
+                    Chandigarh College of Technology presents...
                 </div>
                 <div style={{ color: '#0ff', fontSize: '1.2rem', marginBottom: '1rem', fontFamily: 'var(--font-display)', letterSpacing: '2px', fontWeight: 'bold' }}>
                     APRIL 04 - 05, 2026
                 </div>
 
                 <h2 className="heading-font" style={{ fontSize: '5rem', lineHeight: '1.1', marginBottom: '1.5rem', color: '#fff' }}>
-                    EMPYREAN<br />
-                    TECHNOGENESIS
+                    AUMENTO 2.0<br />
+                    Presents....
                 </h2>
 
                 <p style={{ fontSize: '1.2rem', color: '#ccc', maxWidth: '600px', marginBottom: '3rem', lineHeight: '1.5' }}>
@@ -46,30 +47,32 @@ export default function Hero() {
                 </p>
 
                 <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
-                    <button style={{
-                        background: '#097a80', /* Custom Teal matching the image */
-                        color: '#fff',
-                        border: 'none',
-                        padding: '1rem 3rem',
-                        fontSize: '1.1rem',
-                        cursor: 'pointer',
-                        transition: 'all 0.3s ease',
-                        fontFamily: 'var(--font-display)',
-                        fontWeight: 'bold'
-                    }}
-                        onMouseEnter={e => {
-                            e.target.style.background = '#0ff';
-                            e.target.style.color = '#000';
-                            e.target.style.boxShadow = '0 0 20px rgba(0,255,255,0.4)';
+                    <Link to="/register" style={{ textDecoration: 'none' }}>
+                        <button style={{
+                            background: '#097a80', /* Custom Teal matching the image */
+                            color: '#fff',
+                            border: 'none',
+                            padding: '1rem 3rem',
+                            fontSize: '1.1rem',
+                            cursor: 'pointer',
+                            transition: 'all 0.3s ease',
+                            fontFamily: 'var(--font-display)',
+                            fontWeight: 'bold'
                         }}
-                        onMouseLeave={e => {
-                            e.target.style.background = '#097a80';
-                            e.target.style.color = '#fff';
-                            e.target.style.boxShadow = 'none';
-                        }}
-                    >
-                        REGISTER
-                    </button>
+                            onMouseEnter={e => {
+                                e.target.style.background = '#0ff';
+                                e.target.style.color = '#000';
+                                e.target.style.boxShadow = '0 0 20px rgba(0,255,255,0.4)';
+                            }}
+                            onMouseLeave={e => {
+                                e.target.style.background = '#097a80';
+                                e.target.style.color = '#fff';
+                                e.target.style.boxShadow = 'none';
+                            }}
+                        >
+                            REGISTER
+                        </button>
+                    </Link>
 
                     <button style={{
                         background: 'rgba(0,0,0,0.5)',
