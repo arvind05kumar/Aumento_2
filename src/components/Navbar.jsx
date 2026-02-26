@@ -32,31 +32,8 @@ export default function Navbar() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '3rem' }}>
                 <Link to="/" style={{ color: location.pathname === '/' ? '#0ff' : '#fff', textDecoration: 'none', borderBottom: location.pathname === '/' ? '2px solid #0ff' : '2px solid transparent', paddingBottom: '4px', transition: 'all 0.3s' }}>HOME</Link>
                 <Link to="/events" style={{ color: location.pathname === '/events' ? '#0ff' : '#fff', textDecoration: 'none', borderBottom: location.pathname === '/events' ? '2px solid #0ff' : '2px solid transparent', paddingBottom: '4px', transition: 'all 0.3s' }}>Events</Link>
-                <Link to="/gallery" style={{ color: location.pathname === '/gallery' ? '#0ff' : '#fff', textDecoration: 'none', borderBottom: location.pathname === '/gallery' ? '2px solid #0ff' : '2px solid transparent', paddingBottom: '4px', transition: 'all 0.3s' }}>Gallery</Link>
             </div>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
-                <button style={{
-                    background: 'transparent',
-                    border: '1px solid #0ff',
-                    color: '#0ff',
-                    padding: '0.6rem 2rem',
-                    fontFamily: 'var(--font-display)',
-                    cursor: 'pointer',
-                    transition: 'all 0.3s ease',
-                }}
-                    onMouseEnter={e => {
-                        e.target.style.background = '#0ff';
-                        e.target.style.color = '#000';
-                    }}
-                    onMouseLeave={e => {
-                        e.target.style.background = 'transparent';
-                        e.target.style.color = '#0ff';
-                    }}
-                >
-                    LOGIN
-                </button>
-            </div>
         </nav>
     )
 }

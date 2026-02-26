@@ -1,22 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function EventsPage() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     const technicalEvents = [
-        { name: "VibeCoding", img: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=800&auto=format&fit=crop", link: "/register/vibecoding" },
-        { name: "Tech Bingo", img: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop", link: "/register" },
-        { name: "Fix the Pitch", img: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=800&auto=format&fit=crop", link: "/register" },
-        { name: "Brand Autopsy", img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop", link: "/register" },
-        { name: "60 - second shark tank", img: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=800&auto=format&fit=crop", link: "/register" },
-        { name: "Project Display", img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop", link: "/register" }
+        { name: "Vibe coding", img: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=800&auto=format&fit=crop", link: "/register/vibecoding" },
+        { name: "Startup/Project Idea", img: "https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=800&auto=format&fit=crop", link: "/register" },
+        { name: "Quize", img: "https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?q=80&w=800&auto=format&fit=crop", link: "/register" }
     ];
 
     const nonTechnicalEvents = [
-        { name: "Construmed Photography", img: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=800&auto=format&fit=crop", link: "/register" },
+        { name: "Reel making", img: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=800&auto=format&fit=crop", link: "/register" },
         { name: "Unfinished Canvas", img: "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?q=80&w=800&auto=format&fit=crop", link: "/register" },
-        { name: "Mock AD Crazis", img: "https://images.unsplash.com/photo-1533750349088-cd871a92f312?q=80&w=800&auto=format&fit=crop", link: "/register" },
-        { name: "String Art", img: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=800&auto=format&fit=crop", link: "/register" },
-        { name: "Gamming Tournament -Free Fire", img: "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800&auto=format&fit=crop", link: "/register/freefire" }
+        { name: "Arm wrestling", img: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?q=80&w=800&auto=format&fit=crop", link: "/register" },
+        { name: "Gamming", img: "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800&auto=format&fit=crop", link: "/register/freefire" }
+    ];
+
+    const openEvents = [
+        { name: "Jamming Session", img: "https://images.unsplash.com/photo-1511192336575-5a79af67a629?q=80&w=800&auto=format&fit=crop", link: "/register" },
+        { name: "String arts", img: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=800&auto=format&fit=crop", link: "/register" },
+        { name: "VR", img: "https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?q=80&w=800&auto=format&fit=crop", link: "/register" },
+        { name: "Startup Interaction", img: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=800&auto=format&fit=crop", link: "/register" }
     ];
 
     const renderEventList = (events) => (
@@ -129,6 +135,18 @@ export default function EventsPage() {
                     NON-TECHNICAL EVENTS
                 </h2>
                 {renderEventList(nonTechnicalEvents)}
+
+                <h2 className="heading-font" style={{ fontSize: '2.5rem', color: '#ff9800', marginTop: '6rem', borderBottom: '1px solid rgba(255, 152, 0, 0.3)', paddingBottom: '1rem' }}>
+                    OPEN EVENTS
+                </h2>
+                {renderEventList(openEvents)}
+
+                <h2 className="heading-font" style={{ fontSize: '2.5rem', color: '#ff9800', marginTop: '6rem', borderBottom: '1px solid rgba(255, 152, 0, 0.3)', paddingBottom: '1rem' }}>
+                    OTHER FUN ACTIVITIES
+                </h2>
+                <p style={{ color: '#a0a0a0', fontSize: '1.2rem', marginTop: '1rem' }}>
+                    Stay tuned! Exciting fun activities will be revealed soon.
+                </p>
             </div>
 
         </section>
