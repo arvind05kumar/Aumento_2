@@ -16,7 +16,7 @@ export default function AumentoPast() {
             padding: '4rem 0 2rem 0',
             overflow: 'hidden',
         }}>
-            <h2 className="heading-font text-gradient" style={{ fontSize: '3rem', marginBottom: '2rem', textAlign: 'center' }}>
+            <h2 className="heading-font text-gradient aumento-past-title" style={{ fontSize: '3rem', marginBottom: '2rem', textAlign: 'center' }}>
                 AUMENTO 1.0 MEMORIES
             </h2>
 
@@ -38,6 +38,7 @@ export default function AumentoPast() {
                             <img
                                 src={src}
                                 alt={`Aumento Memory ${i}`}
+                                className="marquee-img"
                                 style={{
                                     height: '300px',
                                     width: '450px',

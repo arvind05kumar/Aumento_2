@@ -40,15 +40,14 @@ export default function About() {
     }, []);
 
     return (
-        <section ref={sectionRef} style={{
-
+        <section className="about-container" ref={sectionRef} style={{
             display: 'flex',
             alignItems: 'center',
             padding: '5rem 10%',
             zIndex: 10,
             overflow: 'hidden'
         }}>
-            <div style={{
+            <div className="about-content" style={{
                 display: 'flex',
                 flexDirection: 'row',
                 alignItems: 'center',
@@ -58,7 +57,7 @@ export default function About() {
                 maxWidth: '1200px'
             }}>
                 {/* Left Content */}
-                <div ref={contentRef} style={{ flex: '1 1 400px' }}>
+                <div className="about-text" ref={contentRef} style={{ flex: '1 1 400px' }}>
                     <h2 className="heading-font" style={{
                         fontSize: '3.5rem',
                         color: '#0ff',
@@ -79,7 +78,7 @@ export default function About() {
                 </div>
 
                 {/* Right Image */}
-                <div ref={imageRef} style={{
+                <div className="about-image-wrapper" ref={imageRef} style={{
                     flex: '0 1 300px', // Reduced basis to make it smaller
                     position: 'relative',
                     display: 'flex',

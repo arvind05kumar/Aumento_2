@@ -40,7 +40,7 @@ export default function RegistrationPage() {
     };
 
     return (
-        <section style={{
+        <section className="registration-container" style={{
             minHeight: '100vh',
             padding: '8rem 2rem 4rem 2rem', // Top padding accounts for navbar
             display: 'flex',
@@ -59,7 +59,7 @@ export default function RegistrationPage() {
                 width: '100%',
                 maxWidth: '600px'
             }}>
-                <h2 className="heading-font text-gradient" style={{ textAlign: 'center', fontSize: '2.5rem', marginBottom: '1rem', textShadow: '0 0 10px rgba(0, 255, 255, 0.5)' }}>
+                <h2 className="heading-font text-gradient registration-title" style={{ textAlign: 'center', fontSize: '2.5rem', marginBottom: '1rem', textShadow: '0 0 10px rgba(0, 255, 255, 0.5)' }}>
                     REGISTER NOW
                 </h2>
                 <p style={{ textAlign: 'center', color: '#a0a0a0', marginBottom: '2rem' }}>

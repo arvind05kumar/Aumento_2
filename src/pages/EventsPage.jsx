@@ -115,33 +115,33 @@ export default function EventsPage() {
     );
 
     return (
-        <section style={{
+        <section className="events-page-container" style={{
             minHeight: '100vh',
             padding: '8rem 4rem 4rem 4rem',
             position: 'relative'
         }}>
             <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-                <h1 className="heading-font text-gradient" style={{ fontSize: '4rem', marginBottom: '1rem' }}>ALL EVENTS</h1>
+                <h1 className="heading-font text-gradient events-page-title" style={{ fontSize: '4rem', marginBottom: '1rem' }}>ALL EVENTS</h1>
                 <p style={{ color: '#a0a0a0', fontSize: '1.2rem', marginBottom: '4rem', maxWidth: '600px' }}>
                     Explore our expansive list of technical and non-technical challenges designed to push the boundaries of innovation and creativity.
                 </p>
 
-                <h2 className="heading-font" style={{ fontSize: '2.5rem', color: '#ff9800', marginTop: '4rem', borderBottom: '1px solid rgba(255, 152, 0, 0.3)', paddingBottom: '1rem' }}>
+                <h2 className="heading-font events-category-title" style={{ fontSize: '2.5rem', color: '#ff9800', marginTop: '4rem', borderBottom: '1px solid rgba(255, 152, 0, 0.3)', paddingBottom: '1rem' }}>
                     TECHNICAL EVENTS
                 </h2>
                 {renderEventList(technicalEvents)}
 
-                <h2 className="heading-font" style={{ fontSize: '2.5rem', color: '#ff9800', marginTop: '6rem', borderBottom: '1px solid rgba(255, 152, 0, 0.3)', paddingBottom: '1rem' }}>
+                <h2 className="heading-font events-category-title" style={{ fontSize: '2.5rem', color: '#ff9800', marginTop: '6rem', borderBottom: '1px solid rgba(255, 152, 0, 0.3)', paddingBottom: '1rem' }}>
                     NON-TECHNICAL EVENTS
                 </h2>
                 {renderEventList(nonTechnicalEvents)}
 
-                <h2 className="heading-font" style={{ fontSize: '2.5rem', color: '#ff9800', marginTop: '6rem', borderBottom: '1px solid rgba(255, 152, 0, 0.3)', paddingBottom: '1rem' }}>
+                <h2 className="heading-font events-category-title" style={{ fontSize: '2.5rem', color: '#ff9800', marginTop: '6rem', borderBottom: '1px solid rgba(255, 152, 0, 0.3)', paddingBottom: '1rem' }}>
                     OPEN EVENTS
                 </h2>
                 {renderEventList(openEvents)}
 
-                <h2 className="heading-font" style={{ fontSize: '2.5rem', color: '#ff9800', marginTop: '6rem', borderBottom: '1px solid rgba(255, 152, 0, 0.3)', paddingBottom: '1rem' }}>
+                <h2 className="heading-font events-category-title" style={{ fontSize: '2.5rem', color: '#ff9800', marginTop: '6rem', borderBottom: '1px solid rgba(255, 152, 0, 0.3)', paddingBottom: '1rem' }}>
                     OTHER FUN ACTIVITIES
                 </h2>
                 <p style={{ color: '#a0a0a0', fontSize: '1.2rem', marginTop: '1rem' }}>

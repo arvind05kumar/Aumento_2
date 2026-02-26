@@ -14,8 +14,8 @@ export default function Hero() {
     }, []);
 
     return (
-        <section style={{
-            height: '100vh',
+        <section className="hero-container" style={{
+            minHeight: '100vh',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -33,29 +33,29 @@ export default function Hero() {
                     Chandigarh College of Technology presents
                 </div>
 
-                <h2 className="heading-font" style={{ fontSize: '5rem', lineHeight: '1.1', marginBottom: '1.5rem', color: '#fff' }}>
+                <h2 className="heading-font hero-title" style={{ fontSize: '5rem', lineHeight: '1.1', marginBottom: '1.5rem', color: '#fff' }}>
                     AUMENTO 2.0<br />
 
                 </h2>
-                <div style={{ color: '#0ff', fontSize: '1.2rem', marginBottom: '1rem', fontFamily: 'var(--font-display)', letterSpacing: '2px', fontWeight: 'bold' }}>
+                <div className="hero-date" style={{ color: '#0ff', fontSize: '1.2rem', marginBottom: '1rem', fontFamily: 'var(--font-display)', letterSpacing: '2px', fontWeight: 'bold' }}>
                     APRIL 04 - 05, 2026
                 </div>
 
-                <p style={{ fontSize: '1.2rem', color: '#ccc', maxWidth: '600px', margin: '0 auto 3rem', lineHeight: '1.5' }}>
+                <p className="hero-desc" style={{ fontSize: '1.2rem', color: '#ccc', maxWidth: '600px', margin: '0 auto 3rem', lineHeight: '1.5' }}>
                     A celebration of technology, innovation, and ideas brought together by curious minds. Join us as we explore, learn, and build the future.
                 </p>
-                <div style={{ marginBottom: '3rem' }}>
+                <div className="hero-powered-by" style={{ marginBottom: '3rem' }}>
                     <p style={{ fontSize: '1.2rem', color: '#ccc', margin: '0 auto 1rem', lineHeight: '1.5' }}>
                         Powered by
                     </p>
-                    <div style={{ display: 'flex', gap: '2rem', justifyContent: 'center', alignItems: 'center' }}>
-                        <img src="/acrobite.png" alt="Acrobite" style={{ height: '40px', width: 'auto', objectFit: 'contain' }} />
-                        <div style={{ width: '2px', height: '35px', background: 'rgba(255, 255, 255, 0.2)' }}></div>
-                        <img src="/Kollabworks.png" alt="Kollabworks" style={{ height: '45px', width: 'auto', objectFit: 'contain' }} />
+                    <div className="powered-by-logos" style={{ display: 'flex', gap: '2rem', justifyContent: 'center', alignItems: 'center' }}>
+                        <img src="/acrobite.png" alt="Acrobite" className="powered-logo" style={{ height: '40px', width: 'auto', objectFit: 'contain' }} />
+                        <div className="powered-by-separator" style={{ width: '2px', height: '35px', background: 'rgba(255, 255, 255, 0.2)' }}></div>
+                        <img src="/Kollabworks.png" alt="Kollabworks" className="powered-logo" style={{ height: '45px', width: 'auto', objectFit: 'contain' }} />
                     </div>
                 </div>
 
-                <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center', justifyContent: 'center' }}>
+                <div className="hero-buttons" style={{ display: 'flex', gap: '1.5rem', alignItems: 'center', justifyContent: 'center' }}>
                     <Link to="/register" style={{ textDecoration: 'none' }}>
                         <button style={{
                             background: '#097a80', /* Custom Teal matching the image */

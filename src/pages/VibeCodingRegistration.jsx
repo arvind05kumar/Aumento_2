@@ -24,7 +24,7 @@ export default function VibeCodingRegistration() {
     };
 
     return (
-        <section style={{
+        <section className="registration-container" style={{
             minHeight: '100vh',
             padding: '8rem 2rem 4rem 2rem',
             display: 'flex',
@@ -43,7 +43,7 @@ export default function VibeCodingRegistration() {
                 width: '100%',
                 maxWidth: '600px'
             }}>
-                <h2 className="heading-font text-gradient" style={{ textAlign: 'center', fontSize: '2.5rem', marginBottom: '0.5rem', textShadow: '0 0 10px rgba(0, 255, 255, 0.5)' }}>
+                <h2 className="heading-font text-gradient registration-title" style={{ textAlign: 'center', fontSize: '2.5rem', marginBottom: '0.5rem', textShadow: '0 0 10px rgba(0, 255, 255, 0.5)' }}>
                     REGISTER NOW
                 </h2>
                 <h3 style={{ textAlign: 'center', color: '#0ff', fontSize: '1.5rem', marginBottom: '1rem', fontFamily: 'var(--font-display)', letterSpacing: '2px' }}>
