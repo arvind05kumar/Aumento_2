@@ -1,21 +1,22 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function EventsPage() {
     const technicalEvents = [
-        { name: "VibeCoding", img: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=800&auto=format&fit=crop", link: "#" },
-        { name: "Tech Bingo", img: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop", link: "#" },
-        { name: "Fix the Pitch", img: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=800&auto=format&fit=crop", link: "#" },
-        { name: "Brand Autopsy", img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop", link: "#" },
-        { name: "60 - second shark tank", img: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=800&auto=format&fit=crop", link: "#" },
-        { name: "Project Display", img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop", link: "#" }
+        { name: "VibeCoding", img: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=800&auto=format&fit=crop", link: "/register/vibecoding" },
+        { name: "Tech Bingo", img: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop", link: "/register" },
+        { name: "Fix the Pitch", img: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=800&auto=format&fit=crop", link: "/register" },
+        { name: "Brand Autopsy", img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop", link: "/register" },
+        { name: "60 - second shark tank", img: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=800&auto=format&fit=crop", link: "/register" },
+        { name: "Project Display", img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop", link: "/register" }
     ];
 
     const nonTechnicalEvents = [
-        { name: "Construmed Photography", img: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=800&auto=format&fit=crop", link: "#" },
-        { name: "Unfinished Canvas", img: "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?q=80&w=800&auto=format&fit=crop", link: "#" },
-        { name: "Mock AD Crazis", img: "https://images.unsplash.com/photo-1533750349088-cd871a92f312?q=80&w=800&auto=format&fit=crop", link: "#" },
-        { name: "String Art", img: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=800&auto=format&fit=crop", link: "#" },
-        { name: "Gamming Tournament -Free Fire", img: "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800&auto=format&fit=crop", link: "#" }
+        { name: "Construmed Photography", img: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=800&auto=format&fit=crop", link: "/register" },
+        { name: "Unfinished Canvas", img: "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?q=80&w=800&auto=format&fit=crop", link: "/register" },
+        { name: "Mock AD Crazis", img: "https://images.unsplash.com/photo-1533750349088-cd871a92f312?q=80&w=800&auto=format&fit=crop", link: "/register" },
+        { name: "String Art", img: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=800&auto=format&fit=crop", link: "/register" },
+        { name: "Gamming Tournament -Free Fire", img: "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800&auto=format&fit=crop", link: "/register/freefire" }
     ];
 
     const renderEventList = (events) => (
@@ -75,7 +76,7 @@ export default function EventsPage() {
                         filter: 'drop-shadow(0 5px 15px rgba(0,255,255,0.4))',
                         transition: 'filter 0.3s ease'
                     }}>
-                        <a href={event.link} style={{ textDecoration: 'none' }}>
+                        <Link to={event.link} style={{ textDecoration: 'none' }}>
                             <button style={{
                                 backgroundColor: '#0ff',
                                 color: '#000',
@@ -100,7 +101,7 @@ export default function EventsPage() {
                             >
                                 REGISTER NOW
                             </button>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             ))}

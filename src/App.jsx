@@ -2,6 +2,9 @@ import React, { useEffect, useRef } from 'react';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import EventsPage from './pages/EventsPage';
+import RegistrationPage from './pages/RegistrationPage';
+import VibeCodingRegistration from './pages/VibeCodingRegistration';
+import FreeFireRegistration from './pages/FreeFireRegistration';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import ParticleBackground from './components/ParticleBackground';
 
@@ -53,6 +56,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/events" element={<EventsPage />} />
+            <Route path="/register" element={<RegistrationPage />} />
+            <Route path="/register/vibecoding" element={<VibeCodingRegistration />} />
+            <Route path="/register/freefire" element={<FreeFireRegistration />} />
           </Routes>
         </main>
       </div>
