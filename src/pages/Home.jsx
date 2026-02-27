@@ -4,13 +4,13 @@ import About from '../components/About';
 import Workshops from '../components/Workshops';
 import AumentoPast from '../components/AumentoPast';
 
-export default function Home() {
-    return (
-        <>
-            <Hero />
-            <About />
-            <AumentoPast />
-            <Workshops />
-        </>
-    );
+
+return (
+    <>
+        <Hero />
+        <About />
+        <AumentoPast />
+        <Workshops />
+    </>
+);
 }
