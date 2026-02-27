@@ -119,23 +119,8 @@ export default function Hero() {
                 alignItems: 'center',
                 gap: '10px'
             }}>
-                <div style={{
-                    width: '2px',
-                    height: '40px',
-                    background: 'linear-gradient(to bottom, #00ffff, transparent)',
-                    animation: 'scrollPulse 2s infinite'
-                }} />
                 <span style={{ fontSize: '0.8rem', color: '#00ffff', letterSpacing: '2px' }}>SCROLL TO EXPLORE</span>
             </div>
-
-            <style>{`
-        @keyframes scrollPulse {
-            0% { transform: scaleY(0); transform-origin: top; opacity: 1; }
-            50% { transform: scaleY(1); transform-origin: top; opacity: 1; }
-            50.1% { transform: scaleY(1); transform-origin: bottom; opacity: 1; }
-            100% { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
-        }
-      `}</style>
         </section>
     )
 }
