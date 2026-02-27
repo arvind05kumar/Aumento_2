@@ -5,19 +5,17 @@ export default function Workshops() {
     const cards = [
         { title: "VibeCoding", cat: "Programming Challenge", img: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=800&auto=format&fit=crop" },
         { title: "Gamming Tournament", cat: "Free Fire", img: "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800&auto=format&fit=crop" },
-        { title: "Tech Bingo", cat: "Trivia", img: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop" },
+        { title: "Arm wrestling", cat: "Trivia", img: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop" },
     ];
 
     return (
-        <section style={{
-            minHeight: '100vh',
-            padding: '8rem 4rem',
-            position: 'relative'
+        <section className="workshops-container" style={{
+            padding: '5rem 4rem 6rem',
         }}>
             <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-                <h2 className="heading-font text-gradient" style={{ fontSize: '3rem', marginBottom: '4rem' }}>FEATURED EVENTS</h2>
+                <h2 className="heading-font text-gradient workshops-title" style={{ fontSize: '3rem', marginBottom: '2rem' }}>FEATURED EVENTS</h2>
 
-                <div style={{
+                <div className="workshops-grid" style={{
                     display: 'grid',
                     gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
                     gap: '2rem'

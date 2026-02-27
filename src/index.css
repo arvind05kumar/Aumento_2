@@ -73,3 +73,154 @@ body {
   z-index: 1;
   pointer-events: none;
 }
+
+/* -----------------------------------
+   Mobile Responsiveness Rules
+----------------------------------- */
+@media (max-width: 768px) {
+
+  /* Global adjustments */
+  section {
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+  }
+
+  /* Navbar */
+  .navbar-container {
+    padding: 0.5rem 1rem !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+    border-radius: 12px !important;
+  }
+
+  .navbar-logo-area {
+    gap: 0.5rem !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  .navbar-title {
+    font-size: 1.1rem !important;
+  }
+
+  .navbar-logo-img {
+    width: 45px !important;
+  }
+
+  .navbar-cct-logo img {
+    height: 25px !important;
+  }
+
+  .navbar-separator {
+    height: 25px !important;
+    margin: 0 0.2rem !important;
+  }
+
+  .navbar-links {
+    gap: 1.5rem !important;
+    justify-content: center !important;
+    width: 100% !important;
+    padding-bottom: 0.5rem !important;
+  }
+
+  /* Hero Section */
+  .hero-container {
+    padding-top: 5rem !important;
+  }
+
+  .hero-title {
+    font-size: 3.5rem !important;
+  }
+
+  .hero-date {
+    font-size: 1rem !important;
+  }
+
+  .hero-desc {
+    font-size: 1rem !important;
+    margin-bottom: 2rem !important;
+  }
+
+  .hero-buttons {
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+
+  .hero-buttons button {
+    width: 100% !important;
+    padding: 1rem 2rem !important;
+  }
+
+  /* Powered By */
+  .powered-by-logos {
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+
+  .powered-by-separator {
+    width: 35px !important;
+    height: 2px !important;
+  }
+
+  /* About Section */
+  .about-container {
+    padding: 3rem 5% !important;
+  }
+
+  .about-content {
+    flex-direction: column !important;
+    gap: 2rem !important;
+  }
+
+  .about-text h2 {
+    font-size: 2.5rem !important;
+  }
+
+  .about-text p {
+    font-size: 1rem !important;
+  }
+
+  /* Events / Workshops */
+  .workshops-container {
+    padding: 2rem 5% 4rem !important;
+  }
+
+  .workshops-title {
+    font-size: 2.2rem !important;
+  }
+
+  .events-page-container {
+    padding: 6rem 5% 3rem !important;
+  }
+
+  .events-page-title {
+    font-size: 2.5rem !important;
+  }
+
+  .events-category-title {
+    font-size: 1.8rem !important;
+    margin-top: 3rem !important;
+  }
+
+  /* AumentoPast */
+  .aumento-past-title {
+    font-size: 2rem !important;
+  }
+
+  .marquee-img {
+    width: 250px !important;
+    height: 180px !important;
+  }
+
+  /* Registration Pages */
+  .registration-container {
+    padding: 6rem 5% 3rem !important;
+  }
+
+  .registration-title {
+    font-size: 2.2rem !important;
+  }
+}

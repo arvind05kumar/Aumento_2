@@ -14,39 +14,48 @@ export default function Hero() {
     }, []);
 
     return (
-        <section style={{
-            height: '100vh',
+        <section className="hero-container" style={{
+            minHeight: '100vh',
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'flex-start',
-            paddingLeft: '10%',
+            justifyContent: 'center',
             position: 'relative'
         }}>
             <div
                 ref={titleRef}
                 style={{
                     maxWidth: '800px',
-                    textAlign: 'left',
+                    textAlign: 'center',
                     zIndex: 10,
                 }}
             >
                 <div style={{ color: '#aaa', fontSize: '1rem', marginBottom: '0.5rem', fontFamily: 'var(--font-main)' }}>
-                    Chandigarh College of Technology presents...
+                    Chandigarh College of Technology presents
                 </div>
-                <div style={{ color: '#0ff', fontSize: '1.2rem', marginBottom: '1rem', fontFamily: 'var(--font-display)', letterSpacing: '2px', fontWeight: 'bold' }}>
+
+                <h2 className="heading-font hero-title" style={{ fontSize: '5rem', lineHeight: '1.1', marginBottom: '1.5rem', color: '#fff' }}>
+                    AUMENTO 2.0<br />
+
+                </h2>
+                <div className="hero-date" style={{ color: '#0ff', fontSize: '1.2rem', marginBottom: '1rem', fontFamily: 'var(--font-display)', letterSpacing: '2px', fontWeight: 'bold' }}>
                     APRIL 04 - 05, 2026
                 </div>
 
-                <h2 className="heading-font" style={{ fontSize: '5rem', lineHeight: '1.1', marginBottom: '1.5rem', color: '#fff' }}>
-                    AUMENTO 2.0<br />
-                    Presents....
-                </h2>
-
-                <p style={{ fontSize: '1.2rem', color: '#ccc', maxWidth: '600px', marginBottom: '3rem', lineHeight: '1.5' }}>
+                <p className="hero-desc" style={{ fontSize: '1.2rem', color: '#ccc', maxWidth: '600px', margin: '0 auto 3rem', lineHeight: '1.5' }}>
                     A celebration of technology, innovation, and ideas brought together by curious minds. Join us as we explore, learn, and build the future.
                 </p>
+                <div className="hero-powered-by" style={{ marginBottom: '3rem' }}>
+                    <p style={{ fontSize: '1.2rem', color: '#ccc', margin: '0 auto 1rem', lineHeight: '1.5' }}>
+                        Powered by
+                    </p>
+                    <div className="powered-by-logos" style={{ display: 'flex', gap: '2rem', justifyContent: 'center', alignItems: 'center' }}>
+                        <img src="/acrobite.png" alt="Acrobite" className="powered-logo" style={{ height: '40px', width: 'auto', objectFit: 'contain' }} />
+                        <div className="powered-by-separator" style={{ width: '2px', height: '35px', background: 'rgba(255, 255, 255, 0.2)' }}></div>
+                        <img src="/Kollabworks.png" alt="Kollabworks" className="powered-logo" style={{ height: '45px', width: 'auto', objectFit: 'contain' }} />
+                    </div>
+                </div>
 
-                <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
+                <div className="hero-buttons" style={{ display: 'flex', gap: '1.5rem', alignItems: 'center', justifyContent: 'center' }}>
                     <Link to="/register" style={{ textDecoration: 'none' }}>
                         <button style={{
                             background: '#097a80', /* Custom Teal matching the image */
@@ -74,28 +83,30 @@ export default function Hero() {
                         </button>
                     </Link>
 
-                    <button style={{
-                        background: 'rgba(0,0,0,0.5)',
-                        color: '#fff',
-                        border: '1px solid rgba(0,255,255,0.3)',
-                        padding: '1rem 3rem',
-                        fontSize: '1.1rem',
-                        cursor: 'pointer',
-                        transition: 'all 0.3s ease',
-                        fontFamily: 'var(--font-display)',
-                        fontWeight: 'bold'
-                    }}
-                        onMouseEnter={e => {
-                            e.target.style.background = 'rgba(0,255,255,0.1)';
-                            e.target.style.borderColor = '#0ff';
+                    <Link to="/events" style={{ textDecoration: 'none' }}>
+                        <button style={{
+                            background: 'rgba(0,0,0,0.5)',
+                            color: '#fff',
+                            border: '1px solid rgba(0,255,255,0.3)',
+                            padding: '1rem 3rem',
+                            fontSize: '1.1rem',
+                            cursor: 'pointer',
+                            transition: 'all 0.3s ease',
+                            fontFamily: 'var(--font-display)',
+                            fontWeight: 'bold'
                         }}
-                        onMouseLeave={e => {
-                            e.target.style.background = 'rgba(0,0,0,0.5)';
-                            e.target.style.borderColor = 'rgba(0,255,255,0.3)';
-                        }}
-                    >
-                        BUY TICKETS
-                    </button>
+                            onMouseEnter={e => {
+                                e.target.style.background = 'rgba(0,255,255,0.1)';
+                                e.target.style.borderColor = '#0ff';
+                            }}
+                            onMouseLeave={e => {
+                                e.target.style.background = 'rgba(0,0,0,0.5)';
+                                e.target.style.borderColor = 'rgba(0,255,255,0.3)';
+                            }}
+                        >
+                            EXPLORE EVENTS
+                        </button>
+                    </Link>
                 </div>
             </div>
 
@@ -108,23 +119,8 @@ export default function Hero() {
                 alignItems: 'center',
                 gap: '10px'
             }}>
-                <div style={{
-                    width: '2px',
-                    height: '40px',
-                    background: 'linear-gradient(to bottom, #00ffff, transparent)',
-                    animation: 'scrollPulse 2s infinite'
-                }} />
                 <span style={{ fontSize: '0.8rem', color: '#00ffff', letterSpacing: '2px' }}>SCROLL TO EXPLORE</span>
             </div>
-
-            <style>{`
-        @keyframes scrollPulse {
-            0% { transform: scaleY(0); transform-origin: top; opacity: 1; }
-            50% { transform: scaleY(1); transform-origin: top; opacity: 1; }
-            50.1% { transform: scaleY(1); transform-origin: bottom; opacity: 1; }
-            100% { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
-        }
-      `}</style>
         </section>
     )
 }
